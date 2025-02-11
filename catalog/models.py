@@ -9,3 +9,11 @@ class Place(models.Model):
     longitude = models.FloatField(verbose_name="Долгота")
     def __str__(self):
         return self.title
+
+
+class Image(models.Model):
+    place = models.ForeignKey(Place, verbose_name="Место", on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(upload_to="images/")
+    number_image = models.IntegerField(default=0)
+    def __str__(self):
+        return self.place.title, self.number_image
