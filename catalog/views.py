@@ -34,4 +34,4 @@ def index(request):
                 ],
             }
         }
-    return render(request, "templates/index.html", context=data)
+    return render(request, "index.html", context=data)
