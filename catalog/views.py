@@ -11,11 +11,11 @@ def index(request):
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [place.latitude, place.longitude]
+                "coordinates": [place.longitude, place.latitude]
                 },
             "properties": {
                 "title": place.title,
-                "placeId": place.id,
+                "placeId": place.id",
                 "detailsUrl": "static/places/moscow_legends.json"
                 }
         }
