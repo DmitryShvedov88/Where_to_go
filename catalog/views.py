@@ -16,7 +16,7 @@ def index(request):
                 },
             "properties": {
                 "title": place.title,
-                "placeId": place.id,
+                "placeId": place.id",
                 "detailsUrl": "static/places/moscow_legends.json"
                 }
         }
