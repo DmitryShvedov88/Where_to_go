@@ -8,7 +8,7 @@ class Place(models.Model):
     latitude = models.FloatField(verbose_name="Широта")
     longitude = models.FloatField(verbose_name="Долгота")
     def __str__(self):
-        return self.title
+        return f"{self.title}"
 
 
 class Image(models.Model):
