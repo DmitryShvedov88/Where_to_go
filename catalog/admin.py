@@ -2,10 +2,13 @@ from django.contrib import admin
 from .models import Place, Image
 
 
+class ImageInline(admin.TabularInline):
+    model = Image
 
-# @admin.register(Place)
-# class PostAdmin(admin.ModelAdmin):
-#     raw_id_fields = ('likes',)
+@admin.register(Place)
+class PostAdmin(admin.ModelAdmin):
+    inlines = (ImageInline,)
 
-admin.site.register(Place)
-admin.site.register(Image)
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    pass
