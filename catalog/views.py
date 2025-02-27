@@ -27,9 +27,6 @@ def index(request):
             "features": features
             }
         }
-    print("context")
-    print(context)
-
     return render(request, "index.html", context=context)
 
 
