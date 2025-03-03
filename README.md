@@ -38,5 +38,9 @@ And find your places.
 
 ![alt text](image.png)
 
+#### My site example
+
+https://dmitryshvedov88.pythonanywhere.com/
+
 #### Project Goals 
 **This code was written for educational purposes as part of an online course for web developers at [dvmn.org](https://dvmn.org/modules/).**

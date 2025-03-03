@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 .venv
 media
+image.png
 
 # C extensions
 *.so
