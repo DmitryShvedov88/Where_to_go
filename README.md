@@ -46,6 +46,7 @@ You can add place, photos, match faster using JSON/
 
 https://github.com/devmanorg/where-to-go-places/blob/master/places/Экскурсионный%20проект%20«Крыши24.рф».json
 
+
 ```
 {
     "title": "Экскурсионный проект «Крыши24.рф»",
