@@ -39,8 +39,8 @@ python manage.py runserver
 python manage.py createsuperuser
 ```
 
-Now you can add some places in admine pannel.
-Go to http://127.0.0.1:8000/admine
+Now you can add some places in admin pannel.
+Go to http://127.0.0.1:8000/admin
 You have several tabs where you can add coordinates, photos, description of an interesting place.
 
 After all you can go to http://127.0.0.1:8000/
