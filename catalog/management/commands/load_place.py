@@ -19,7 +19,7 @@ class Command(BaseCommand):
                     Image.objects.get_or_create(
                         place=place,
                         image=ContentFile(response.content, name=image_name),
-                        number_image=number,
+                        number=number,
                     )
 
     def load_place(self, json_url):

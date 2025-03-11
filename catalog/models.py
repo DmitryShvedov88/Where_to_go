@@ -9,9 +9,10 @@ class Place(models.Model):
     long_description = HTMLField(verbose_name='Длинное описание', blank=True, null=True)
     latitude = models.FloatField(verbose_name="Широта")
     longitude = models.FloatField(verbose_name="Долгота")
+
     def __str__(self):
         return f"{self.title}"
-    
+
     class Meta:
         ordering = ['title']
 
@@ -19,9 +20,10 @@ class Place(models.Model):
 class Image(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(verbose_name="КАРТИНКА", db_index=True, upload_to="images/")
-    number_image = models.IntegerField(verbose_name="ПОЗИЦИЯ", default=0)
+    number = models.IntegerField(verbose_name="ПОЗИЦИЯ", default=0)
+
     def __str__(self):
-        return f"{self.number_image}. {self.place.title}"
+        return f"{self.number}. {self.place.title}"
 
     class Meta:
-        ordering = ['number_image']
+        ordering = ['number']
