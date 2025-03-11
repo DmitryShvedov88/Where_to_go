@@ -20,7 +20,7 @@ class Place(models.Model):
 class Image(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(verbose_name="КАРТИНКА", db_index=True, upload_to="images/")
-    number = models.IntegerField(verbose_name="ПОЗИЦИЯ", default=0)
+    number = models.IntegerField(verbose_name="ПОЗИЦИЯ", db_index=True, default=0)
 
     def __str__(self):
         return f"{self.number}. {self.place.title}"
