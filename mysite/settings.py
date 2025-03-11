@@ -10,14 +10,11 @@ env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = env.str('SECRET_KEY')
 
-DEBUG = os.environ['DEBUG']
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = [
-    'dmitryshvedov88.pythonanywhere.com',
-    '127.0.0.1',
-    ]
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -63,8 +60,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env.str('DB_ENGINE', default='django.db.backends.sqlite3'),
+        'NAME': BASE_DIR / env.str('DB_NAME', default='db.sqlite3'),
     }
 }
 
