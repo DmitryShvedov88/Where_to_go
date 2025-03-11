@@ -3,7 +3,9 @@
 This is project where you could found intresting place, to go. For example, interesting architectural monuments, natural parks and excursions. You can see photos and short descriptions of these places.
 
 #### To clone repo:
-```git clone https://github.com/DmitryShvedov88/Poster-on-the-map.git```
+```
+git clone https://github.com/DmitryShvedov88/Poster-on-the-map.git
+```
 
 #### Environment variables:
 You should have:
@@ -15,19 +17,27 @@ You should have:
 1. Python3 should already be installed.  
 2. Use pip (or pip3, if there is a conflict with Python2) to install dependencies. 
   
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 #### Make migrations
 
-```python manage.py migrate```
+```
+python manage.py migrate
+```
 
 #### How to start:
 
-```python manage.py runserver```
+```
+python manage.py runserver
+```
 
 #### Crate superuser
 
-```python manage.py createsuperuser```
+```
+python manage.py createsuperuser
+```
 
 Now you can add some places in admine pannel.
 Go to http://127.0.0.1:8000/admine
@@ -38,7 +48,9 @@ And find your places.
 
 #### How to add place
 
-```python manage.py load_place --json_url "your_url".json```
+```
+python manage.py load_place --json_url "your_url".json
+```
 
 You can add place, photos, match faster using JSON/
 
