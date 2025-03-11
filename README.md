@@ -14,7 +14,7 @@ You should have:
 3. ALLOWED_HOSTS - List of hosts that will serve the site
 
 #### How to install requirements
-1. Python3 should already be installed.  
+1. Python 3.10 should already be installed.  
 2. Use pip (or pip3, if there is a conflict with Python2) to install dependencies. 
   
 ```
