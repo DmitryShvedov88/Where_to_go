@@ -3,7 +3,7 @@ from catalog.models import Place, Image
 from django.http import JsonResponse, HttpResponse
 from django.urls import reverse
 
-# Create your views here.
+
 def index(request):
     places = Place.objects.all()
     features = [
