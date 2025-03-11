@@ -5,6 +5,7 @@ from requests.exceptions import HTTPError
 from catalog.models import Place, Image
 from django.core.files.base import ContentFile
 
+
 class Command(BaseCommand):
     help = 'Download JSON files in DB'
 
