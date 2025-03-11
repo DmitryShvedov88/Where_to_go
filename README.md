@@ -1,6 +1,6 @@
 ## My new app "Where to go" as part of the Django ORM course.
 #### "Where to go" 
-A small telegram bot that sends you the results of checking your lessons.
+This is project where you could found intresting place, to go. For example, interesting architectural monuments, natural parks and excursions. You can see photos and short descriptions of these places.
 
 #### To clone repo:
 ```git clone https://github.com/DmitryShvedov88/Poster-on-the-map.git```
