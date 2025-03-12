@@ -16,6 +16,7 @@ class ImageInline(SortableStackedInline):
             obj.image.url
             )
 
+
 @admin.register(Place)
 class PostAdmin(SortableAdminMixin, admin.ModelAdmin):
     search_fields = ['title']

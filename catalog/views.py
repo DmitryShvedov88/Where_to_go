@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from catalog.models import Place, Image
-from django.http import JsonResponse, HttpResponse
+from catalog.models import Place
+from django.http import JsonResponse
 from django.urls import reverse
 
 
@@ -44,4 +44,10 @@ def place_detail(request, place_id):
         }
     }
 
-    return JsonResponse(response, json_dumps_params={'ensure_ascii': False, 'indent': 2})
+    return JsonResponse(
+        response,
+        json_dumps_params={
+            'ensure_ascii': False,
+            'indent': 2
+            }
+            )
