@@ -25,8 +25,8 @@ class PostAdmin(SortableAdminMixin, admin.ModelAdmin):
 
 @admin.register(Image)
 class ImageAdmin(SortableAdminMixin, admin.ModelAdmin):
-    fields = ['preview']
-    readonly_fields = ["preview"]
+    autocomplete_fields = ['place']
+    readonly_fields = ['preview']
 
     def preview(self, obj):
         return format_html(
