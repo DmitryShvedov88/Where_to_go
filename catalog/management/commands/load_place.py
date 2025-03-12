@@ -54,6 +54,6 @@ class Command(BaseCommand):
             print('Connection problem')
 
     def add_arguments(self, parser):
-        parser.add_argument('--json_url',
+        parser.add_argument('json_url',
                             type=str,
                             help='Add the url to json file')
