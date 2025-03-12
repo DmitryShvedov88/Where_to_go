@@ -12,7 +12,7 @@ class ImageInline(SortableStackedInline):
 
     def preview(self, obj):
         return format_html(
-            '<img src="{url}" width="400px" height="300px"/>',
+            '<img src="{}" width="400px" height="300px"/>',
             obj.image.url
             )
 
