@@ -49,7 +49,7 @@ And find your places.
 #### How to add place
 
 ```
-python manage.py load_place --json_url "your_url".json
+python manage.py load_place "your_url".json
 ```
 
 You can add place, photos, match faster using JSON/
