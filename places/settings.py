@@ -88,7 +88,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/DmitryShvedov88/Poster-on-the-map/staticfiles/'
+STATIC_ROOT = '/home/DmitryShvedov88/Where_to_go/staticfiles/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
