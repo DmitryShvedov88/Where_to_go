@@ -41,7 +41,12 @@ class Command(BaseCommand):
             if not plaсe_created:
                 raise CommandError('This place already load')
             place_images = (plaсe_payload['imgs'])
-            self.load_image(plaсe, place_images)
+            try:
+                self.load_image(plaсe, place_images)
+            except HTTPError:
+                print('json_url "%s" does not exist')
+            except ConnectionError:
+                print('Connection problem')
 
     def handle(self, *args, **options):
         try:
