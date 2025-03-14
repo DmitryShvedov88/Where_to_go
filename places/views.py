@@ -31,11 +31,13 @@ def index(request):
 
 
 def place_detail(request, place_id):
-    place = get_object_or_404(Place, id=place_id)
-    place_images = place.images.all()
+    place = get_object_or_404(
+        Place.objects.prefetch_related('images'),
+        id=place_id
+        )
     response = {
         "title": place.title,
-        "imgs": [place_image.image.url for place_image in place_images],
+        "imgs": [place_image.image.url for place_image in place.images.all()],
         "description_short": place.short_description,
         "description_long": place.long_description,
         "coordinates": {
