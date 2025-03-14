@@ -12,7 +12,7 @@ class ImageInline(SortableStackedInline):
 
     def preview(self, obj):
         return format_html(
-            '<img src="{}" width="400px" height="300px"/>',
+            '<img src="{}" max-width="400px" max-height="300px"/>',
             obj.image.url
             )
 
@@ -30,6 +30,6 @@ class ImageAdmin(SortableAdminMixin, admin.ModelAdmin):
 
     def preview(self, obj):
         return format_html(
-            '<img src="{}" width="400px" height="300px" />',
+            '<img src="{}" max-width="400px" max-height="300px" />',
             obj.image.url
             )
