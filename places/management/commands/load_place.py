@@ -29,7 +29,7 @@ class Command(BaseCommand):
         response.raise_for_status()
         if response.status_code == 200:
             plaсe_payload = response.json()
-            plaсe, plaсe_description = Place.objects.get_or_create(
+            plaсe, plaсe_created = Place.objects.get_or_create(
                 title=plaсe_payload['title'],
                 defaults={
                     'short_description': plaсe_payload['description_short'],
@@ -38,7 +38,7 @@ class Command(BaseCommand):
                     'longitude': plaсe_payload['coordinates']['lng']
                     }
                 )
-            if not plaсe_description:
+            if not plaсe_created:
                 raise CommandError('This place already load')
             place_images = (plaсe_payload['imgs'])
             self.load_image(plaсe, place_images)
