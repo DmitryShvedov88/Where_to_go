@@ -40,12 +40,12 @@ class Image(models.Model):
         related_name="images"
         )
     image = models.ImageField(
-        verbose_name="КАРТИНКА",
+        verbose_name="Картинка",
         db_index=True,
         upload_to="images/"
         )
     number = models.IntegerField(
-        verbose_name="ПОЗИЦИЯ",
+        verbose_name="Позиция",
         db_index=True,
         default=0
         )
