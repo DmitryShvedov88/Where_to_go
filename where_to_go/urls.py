@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from catalog.views import index, place_detail
+from places.views import index, place_detail
 
 
 urlpatterns = [

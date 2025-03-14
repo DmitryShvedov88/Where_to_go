@@ -2,7 +2,7 @@ import requests
 import os
 from django.core.management.base import BaseCommand, CommandError
 from requests.exceptions import HTTPError
-from catalog.models import Place, Image
+from places.models import Place, Image
 from django.core.files.base import ContentFile
 
 
