@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('catalog', '0002_rename_lat_place_latitude_rename_lon_place_longitude_and_more'),
+        ('places', '0002_rename_lat_place_latitude_rename_lon_place_longitude_and_more'),
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='images/')),
                 ('number_image', models.IntegerField(default=0)),
-                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='catalog.place', verbose_name='Место')),
+                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='places.place', verbose_name='Место')),
             ],
         ),
     ]
