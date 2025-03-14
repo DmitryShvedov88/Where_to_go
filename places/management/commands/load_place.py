@@ -28,19 +28,19 @@ class Command(BaseCommand):
         response = requests.get(json_url)
         response.raise_for_status()
         if response.status_code == 200:
-            plaсe_data = response.json()
+            plaсe_payload = response.json()
             plaсe, plaсe_description = Place.objects.get_or_create(
-                title=plaсe_data['title'],
+                title=plaсe_payload['title'],
                 defaults={
-                    'short_description': plaсe_data['description_short'],
-                    'long_description': plaсe_data['description_long'],
-                    'latitude': plaсe_data['coordinates']['lat'],
-                    'longitude': plaсe_data['coordinates']['lng']
+                    'short_description': plaсe_payload['description_short'],
+                    'long_description': plaсe_payload['description_long'],
+                    'latitude': plaсe_payload['coordinates']['lat'],
+                    'longitude': plaсe_payload['coordinates']['lng']
                     }
                 )
             if not plaсe_description:
                 raise CommandError('This place already load')
-            place_images = (plaсe_data['imgs'])
+            place_images = (plaсe_payload['imgs'])
             self.load_image(plaсe, place_images)
 
     def handle(self, *args, **options):
