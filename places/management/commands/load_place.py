@@ -1,7 +1,7 @@
-import requests
 import os
-from django.core.management.base import BaseCommand, CommandError
+import requests
 from django.core.files.base import ContentFile
+from django.core.management.base import BaseCommand, CommandError
 from requests.exceptions import HTTPError
 
 from places.models import Place, Image
