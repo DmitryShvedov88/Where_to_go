@@ -1,9 +1,10 @@
 import requests
 import os
 from django.core.management.base import BaseCommand, CommandError
-from requests.exceptions import HTTPError
-from places.models import Place, Image
 from django.core.files.base import ContentFile
+from requests.exceptions import HTTPError
+
+from places.models import Place, Image
 
 
 class Command(BaseCommand):
@@ -36,8 +37,8 @@ class Command(BaseCommand):
                     'long_description': plaсe_payload['description_long'],
                     'latitude': plaсe_payload['coordinates']['lat'],
                     'longitude': plaсe_payload['coordinates']['lng']
-                    }
-                )
+                }
+            )
             if not plaсe_created:
                 raise CommandError('This place already load')
             place_images = (plaсe_payload['imgs'])
