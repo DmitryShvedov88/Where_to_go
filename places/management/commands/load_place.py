@@ -14,15 +14,26 @@ class Command(BaseCommand):
         """Download photo for particular place"""
         for number, image_url in enumerate(place_images, 1):
             if image_url:
-                response = requests.get(image_url)
-                image_name = os.path.basename(image_url)
-                response.raise_for_status()
-                if response.status_code == 200:
-                    Image.objects.get_or_create(
-                        place=place,
-                        image=ContentFile(response.content, name=image_name),
-                        number=number,
-                    )
+                try:
+                    response = requests.get(image_url)
+                    image_name = os.path.basename(image_url)
+                    response.raise_for_status()
+                    if response.status_code == 200:
+                        Image.objects.get_or_create(
+                            place=place,
+                            image=ContentFile(response.content, name=image_name),
+                            number=number,
+                        )
+                        self.stdout.write(
+                            self.style.SUCCESS(
+                                f"Image: {image_name} has been successfully added to the database"
+                            )
+                        )
+                except HTTPError:
+                    self.stderr.write(self.style.ERROR(f"Image loading error code {response.status_code}"))
+                except ConnectionError:
+                    self.stderr.write(self.style.ERROR(f"Connection error {response.status_code}"))
+
 
     def load_place(self, json_url):
         """Download json_place from site"""
@@ -38,6 +49,11 @@ class Command(BaseCommand):
                     'latitude': plaсe_payload['coordinates']['lat'],
                     'longitude': plaсe_payload['coordinates']['lng']
                 }
+            )
+            self.stdout.write(
+                self.style.SUCCESS(
+                    f"Place: {plaсe} has been successfully added to the database"
+                )
             )
             if not plaсe_created:
                 raise CommandError('This place already load')
