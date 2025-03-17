@@ -30,6 +30,6 @@ class ImageAdmin(SortableAdminMixin, admin.ModelAdmin):
 
     def preview(self, obj):
         return format_html(
-            '<img src="{}" max-width="400px" max-height="300px" />',
+            '<img src="{}" style="max-width:250px; max-height:250px"/>',
             obj.image.url
             )
