@@ -34,7 +34,6 @@ class Command(BaseCommand):
                 except ConnectionError:
                     self.stderr.write(self.style.ERROR(f"Connection error {response.status_code}"))
 
-
     def load_place(self, json_url):
         """Download json_place from site"""
         response = requests.get(json_url)
