@@ -1,5 +1,5 @@
 #Python==3.10
-Django==3.*
+Django==3.2.*
 Pillow==10.4.0
 django-admin-sortable2==1.0
 django-tinymce==4.1.0
